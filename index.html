@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de prise de contact</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-container">
+        <!-- Vous pouvez remplacer cette div par votre image en ajoutant style="background-image: url('votre-image.jpg')" -->
+        <div class="bg-pattern"></div>
+    </div>
+
+    <div class="form-wrapper">
+        <div class="logo-container">
+            <h1 class="logo-text">Formulaire de<br><span class="highlight">prise de contact</span></h1>
+        </div>
+
+        <div class="glass-panel">
+            <form id="contactForm" class="contact-form">
+
+                <div class="form-group">
+                    <label for="nom_complet">Nom complet</label>
+                    <input type="text" id="nom_complet" name="nom_complet" placeholder="André Zola Mosi" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Sexe</label>
+                        <div class="radio-group">
+                            <label class="custom-radio">
+                                <input type="radio" name="sexe" value="Homme" required>
+                                <span class="radio-mark"></span>
+                                Homme
+                            </label>
+                            <label class="custom-radio">
+                                <input type="radio" name="sexe" value="Femme" required>
+                                <span class="radio-mark"></span>
+                                Femme
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Niveau en trading</label>
+                    <div class="radio-group vertical">
+                        <label class="custom-radio">
+                            <input type="radio" name="niveau_trading" value="Débutant" required>
+                            <span class="radio-mark"></span>
+                            Débutant
+                        </label>
+                        <label class="custom-radio">
+                            <input type="radio" name="niveau_trading" value="Intermédiaire" required>
+                            <span class="radio-mark"></span>
+                            Intermédiaire
+                        </label>
+                        <label class="custom-radio">
+                            <input type="radio" name="niveau_trading" value="Expérimenté" required>
+                            <span class="radio-mark"></span>
+                            Expérimenté
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="broker">Broker actuel</label>
+                    <input type="text" id="broker" name="broker" placeholder="Ex: Weltrade, IC Markets, Vantage, etc."
+                        required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="telephone">Numéro de téléphone</label>
+                        <input type="tel" id="telephone" name="telephone" pattern="[0-9+ \-\(\)]+"
+                            title="Chiffres et + uniquement" placeholder="+243 82 000 00 00" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Adresse email</label>
+                        <input type="email" id="email" name="email" placeholder="jean@exemple.com" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <span class="btn-text">S'enregistrer</span>
+                    <span class="loader" style="display: none;"></span>
+                </button>
+
+                <!-- Message d'erreur (optionnel, maintenant géré par le Toast) -->
+                <!-- <div id="formMessage" class="form-message"></div> -->
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification Popup -->
+    <div id="toast" class="toast">
+        <div class="toast-content">
+            <div class="toast-icon" id="toastIcon">
+                <!-- Icon injected by JS -->
+            </div>
+            <div class="toast-text">
+                <h4 id="toastTitle">Félicitations !</h4>
+                <p id="toastMessage">Votre enregistrement est effectué avec succès.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
